@@ -7,25 +7,13 @@
 }
 
 .title-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-bottom: 20px;
 }
 
-.title-container h1 {
-    font-size: 25px;
-}
-
-@media screen and (max-width: 768px) {
-    .title-container {
-        flex-direction: column;
-    }
-
-    .title-container h1 {
-        font-size: 20px;
-        margin-bottom: 5px;
-    }
+@media (max-width: 576px) {
+  .title-container {
+    margin-bottom: 40px;
+  }
 }
 
 
@@ -229,12 +217,13 @@
   position: absolute;
   top: 0;
   left: 0;
+  object-fit: cover; /* add this line */
 }
 
 @keyframes hero-animation {
   0% {
     background-position: center center;
-    background-image: url(../img/image.jpg);
+    background-image: url(../img/back.jpg);
   }
   5.71% {
     background-position: center center;
@@ -296,36 +285,26 @@
 
 .hero-header {
   animation-name: hero-animation;
-  animation-duration: 104s;
+  animation-duration: 110s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 
-.hero-header-aboutus {
+.hero-header-main {
     background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/image.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.hero-header-abouAnm {
-    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/image.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .hero-header-gallery {
     background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/gallery/pic4.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.hero-header-services {
-    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/image.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .hero-header-packages {
     background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/image.jpg);
     background-position: center center;

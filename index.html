@@ -96,8 +96,8 @@
                     </div>
                     <a href="service.html" class="nav-item nav-link">Services</a>
                     <div class="nav-item dropdown">
-                    <a href="package.html" class="nav-item dropdown-toggle nav-link">Packages</a>
-                        <div class="dropdown-menu m-0" aria-labelledby="dropdownMenuButton">
+                    <a href="package.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Packages</a>
+                        <div class="dropdown-menu m-0">
                             <a class="dropdown-item" href="package1.html">Akagera Package</a>
                             <a class="dropdown-item" href="package2.html">Musanze Package</a>
                         </div>
@@ -128,49 +128,29 @@
                 <div class="row justify-content-center py-5">
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
                         <h1 class="display-3 text-white mb-3 animated slideInDown">Enjoy Your Vacation With Us!</h1>
-                        <p class="fs-4 text-white mb-4">Explore Rwanda's Best Destinations</p>
+                        <p class="fs-4 text-white mb-4 animated slideInDown">Explore Rwanda's Best Destinations</p>
                     </div>
                 </div>
-                    <div class="row">
-            <div class="col text-center">
-                <i class="fas fa-chevron-down text-white scroll-down-arrow" style="opacity: 0.7;"></i>
-                <p class="text-white scroll-down-text" style="opacity: 0.7;">Scroll Down</p>
             </div>
-        </div>
-    </div>
-    <div id="hero-header">
-        </div>
+            <div id="hero-header">
+            </div>
     </div>
 
     </div>
 
     <!-- Navbar & Hero End -->
+    <style>
+        .white-text,
+        .white-text::placeholder,
+        .white-text:focus {
 
-    <script>
-    document.querySelectorAll(".scroll-down-arrow, .scroll-down-text").forEach(element => {
-        element.addEventListener("click", () => {
-            const target = document.getElementById("hero-header");
-            const offset = 5;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({ top: targetPosition, behavior: "smooth" });
-        });
-    });
-</script>
+        }
 
-<style>
-  .white-text,
-  .white-text::placeholder,
-  .white-text:focus {
-    color: white !important;
-  }
-
-  .white-text option {
-    background-color: #343a40; /* Set to your desired background color */
-    color: white;
-  }
-</style>
-
-
+        .white-text option {
+            background-color: #343a40; /* Set to your desired background color */
+            color: white;
+        }
+    </style>
 
 
     <!-- About Start -->
