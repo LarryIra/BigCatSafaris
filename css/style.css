@@ -6,16 +6,16 @@
     --dark: #14141F;
 }
 
-.title-container {
-  margin-bottom: 20px;
-}
-
-@media (max-width: 576px) {
-  .title-container {
-    margin-bottom: 40px;
+@media screen and (max-width: 576px) {
+  .title-container h1 {
+    font-size: 25px;
+    line-height: 1;
+  }
+  .title-container h1 span {
+    display: block;
+    margin: 0.5em 0;
   }
 }
-
 
 
 .fw-medium {
