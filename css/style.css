@@ -17,6 +17,17 @@
   }
 }
 
+.white-text,
+        .white-text::placeholder,
+        .white-text:focus {
+
+        }
+
+        .white-text option {
+            background-color: #343a40; /* Set to your desired background color */
+            color: white;
+        }
+
 
 .fw-medium {
     font-weight: 600 !important;
