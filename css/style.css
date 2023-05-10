@@ -41,8 +41,8 @@
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
-    bottom: 45px;
+    right: 75px;
+    bottom: 65px;
     z-index: 99;
 }
 
@@ -192,6 +192,24 @@
         display: none;
     }
 }
+
+.btn-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .btn-floating {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+  }
+}
+
+
 
 
 /*** Hero Header ***/
