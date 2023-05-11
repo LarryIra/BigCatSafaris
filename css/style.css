@@ -20,6 +20,7 @@
 .white-text,
         .white-text::placeholder,
         .white-text:focus {
+        color: white;
 
         }
 
