@@ -1,51 +1,41 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Set your EmailJS user identifier (public and private keys)
-    const userIdentifier = `${GRw-eA94SayGE_MTQ}_${DSSx4rWtB744guFIc-VUe}`;
+  // Get the form fields and sanitize them
+  $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+  $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+  $start_datetime = filter_var($_POST["start-datetime"], FILTER_SANITIZE_STRING);
+  $end_datetime = filter_var($_POST["end-datetime"], FILTER_SANITIZE_STRING);
+  $budget = filter_var($_POST["budget"], FILTER_SANITIZE_STRING);
+  $destination = filter_var($_POST["destination"], FILTER_SANITIZE_STRING);
+  $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
 
-    // Get the form data
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $startDateTime = $_POST["start-datetime"];
-    $endDateTime = $_POST["end-datetime"];
-    $budget = $_POST["budget"];
-    $destination = $_POST["destination"];
-    $message = $_POST["message"];
+  // Set the recipient email address
+  $to = "larrywayne309@gmail.com";
 
-    // Construct the template parameters
-    $templateParams = [
-        "name" => $name,
-        "email" => $email,
-        "startDateTime" => $startDateTime,
-        "endDateTime" => $endDateTime,
-        "budget" => $budget,
-        "destination" => $destination,
-        "message" => $message
-    ];
+  // Set the email subject
+  $subject = "New Booking Request";
 
-    // Make a POST request to EmailJS API
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://api.emailjs.com/api/v1.0/email/send");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
-        "service_id" => "service_mvxjvz8",
-        "template_id" => "template_0gj10bu",
-        "user_id" => $userIdentifier,
-        "template_params" => $templateParams
-    ]));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        "Content-Type: application/json"
-    ]);
+  // Set the email message
+  $message = "Name: $name\n\n"
+           . "Email: $email\n\n"
+           . "Start Date & Time: $start_datetime\n\n"
+           . "End Date & Time: $end_datetime\n\n"
+           . "Budget: $budget\n\n"
+           . "Destination: $destination\n\n"
+           . "Message:\n$message";
 
-    $result = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+  // Set the email headers
+  $headers = "From: $name <$email>\r\n";
+  $headers .= "Reply-To: $email\r\n";
+  $headers .= "X-Mailer: PHP/" . phpversion();
 
-    if ($httpCode === 200) {
-        echo "Thank you for your booking request. We will contact you shortly.";
-    } else {
-        echo "Sorry, an error occurred while processing your request. Please try again later.";
-    }
+  // Send the email
+  if (mail($to, $subject, $message, $headers)) {
+    echo "<script>alert('Your message has been sent successfully!');</script>";
+    echo "<meta http-equiv='refresh' content='0'>";
+  } else {
+    echo "<script>alert('There was an error sending your message. Please try again later.');</script>";
+    echo "<meta http-equiv='refresh' content='0'>";
+  }
 }
 ?>
