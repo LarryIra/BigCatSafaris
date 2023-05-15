@@ -1,7 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "larrywayne309@gmail.com";
-    $subject = "Booking Request";
+    // Set your EmailJS user identifier (public and private keys)
+    const userIdentifier = `${GRw-eA94SayGE_MTQ}_${DSSx4rWtB744guFIc-VUe}`;
+
+    // Get the form data
     $name = $_POST["name"];
     $email = $_POST["email"];
     $startDateTime = $_POST["start-datetime"];
@@ -10,18 +12,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $destination = $_POST["destination"];
     $message = $_POST["message"];
 
-    $body = "Name: $name\n";
-    $body .= "Email: $email\n";
-    $body .= "Start Date & Time: $startDateTime\n";
-    $body .= "End Date & Time: $endDateTime\n";
-    $body .= "Budget: $budget\n";
-    $body .= "Destination: $destination\n";
-    $body .= "Message: $message\n";
+    // Construct the template parameters
+    $templateParams = [
+        "name" => $name,
+        "email" => $email,
+        "startDateTime" => $startDateTime,
+        "endDateTime" => $endDateTime,
+        "budget" => $budget,
+        "destination" => $destination,
+        "message" => $message
+    ];
 
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    // Make a POST request to EmailJS API
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://api.emailjs.com/api/v1.0/email/send");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+        "service_id" => "service_mvxjvz8",
+        "template_id" => "template_0gj10bu",
+        "user_id" => $userIdentifier,
+        "template_params" => $templateParams
+    ]));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "Content-Type: application/json"
+    ]);
 
-    if (mail($to, $subject, $body, $headers)) {
+    $result = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($httpCode === 200) {
         echo "Thank you for your booking request. We will contact you shortly.";
     } else {
         echo "Sorry, an error occurred while processing your request. Please try again later.";
