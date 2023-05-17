@@ -448,6 +448,25 @@
         margin-bottom: 20px;
     }
 
+    .conclusion-text {
+    margin-top: 40px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+    }
+
+    .conclusion-text::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 3px;
+        background-color: #000;
+        margin: 20px auto;
+    }
+
+    .text-center {
+        text-align: center;
+    }
 
 
 /*** Section Title ***/
