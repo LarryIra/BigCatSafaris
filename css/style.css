@@ -321,43 +321,43 @@
   }
   5.71% {
     background-position: center center;
-    background-image: url(../img/image1.jpeg);
+    background-image: url(../img/images/image1.jpeg);
   }
   7.69% {
     background-position: center center;
-    background-image: url(../img/image2.jpeg);
+    background-image: url(../img/images/image2.jpeg);
   }
   15.38% {
     background-position: center center;
-    background-image: url(../img/image3.jpeg);
+    background-image: url(../img/images/image3.jpeg);
   }
   23.07% {
     background-position: center center;
-    background-image: url(../img/image4.jpeg);
+    background-image: url(../img/images/image4.jpeg);
   }
   30.76% {
     background-position: center center;
-    background-image: url(../img/image0.jpeg);
+    background-image: url(../img/images/image0.jpeg);
   }
   38.45% {
     background-position: center center;
-    background-image: url(../img/image5.jpeg);
+    background-image: url(../img/images/image5.jpeg);
   }
   46.14% {
     background-position: center center;
-    background-image: url(../img/image6.jpeg);
+    background-image: url(../img/images/image6.jpeg);
   }
   53.83% {
     background-position: center center;
-    background-image: url(../img/image7.jpeg);
+    background-image: url(../img/images/image7.jpeg);
   }
   61.52% {
     background-position: center center;
-    background-image: url(../img/image8.jpeg);
+    background-image: url(../img/images/image8.jpeg);
   }
   69.21% {
     background-position: center center;
-    background-image: url(../img/image9.jpeg);
+    background-image: url(../img/images/image9.jpeg);
   }
   76.9% {
     background-position: center center;
@@ -365,15 +365,15 @@
   }
   84.59% {
     background-position: center center;
-    background-image: url(../img/image11.jpeg);
+    background-image: url(../img/images/image11.jpeg);
   }
   92.28% {
     background-position: center center;
-    background-image: url(../img/image12.jpeg);
+    background-image: url(../img/images/image12.jpeg);
   }
   100% {
     background-position: center center;
-    background-image: url(../img/image13.jpeg);
+    background-image: url(../img/images/image13.jpeg);
   }
 }
 
@@ -386,7 +386,7 @@
 }
 
 .hero-header-main {
-    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/image.jpg);
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/images/image.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -394,13 +394,6 @@
 
 .hero-header-gallery {
     background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/gallery/pic4.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.hero-header-packages {
-    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/image.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
