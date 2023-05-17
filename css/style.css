@@ -379,7 +379,7 @@
 
 .hero-header {
   animation-name: hero-animation;
-  animation-duration: 110s;
+  animation-duration: 150s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
