@@ -411,6 +411,51 @@
     color: rgba(255, 255, 255, .5);
 }
 
+/*** Big Five Section ***/
+
+/* Big Five Intro Section */
+.big-five-intro-section {
+  padding: 50px 0;
+  background-color: #f8f8f8;
+}
+
+.big-five-intro-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.big-five-intro-description {
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Big Five Animal Section */
+.big-five-section {
+        padding: 30px;
+        background-color: #f8f9fa;
+    }
+    
+    .big-five-section .big-five-title {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    
+    .big-five-section .big-five-features li {
+        margin-bottom: 10px;
+    }
+    
+    .big-five-section .big-five-description {
+        margin-bottom: 20px;
+    }
+
+
 
 /*** Section Title ***/
 .section-title {
