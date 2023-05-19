@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" type="x-cion" href="img/icon.png">
+    <link rel="shortcut icon" type="x-cion" href="img/icons/icon.png">
     <title>Akagera Big Five Safaris</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -241,44 +241,80 @@
                 <div class="col-lg-7 col-md-6">
                     <div class="row g-3">
                         <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div id="virunga-carousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#virunga-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#virunga-carousel" data-slide-to="1"></li>
-      <li data-target="#virunga-carousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <a class="position-relative d-block overflow-hidden" href="">
-          <img class="img-fluid" src="img/virunga.png" alt="">
-          <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Virunga Mountains</div>
-        </a>
-      </div>
-      <div class="carousel-item">
-        <a class="position-relative d-block overflow-hidden" href="">
-          <img class="img-fluid" src="img/virunga1.jpg" alt="">
-          <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Virunga Mountains</div>
-        </a>
-      </div>
-      <div class="carousel-item">
-        <a class="position-relative d-block overflow-hidden" href="">
-          <img class="img-fluid" src="img/virunga2.jpg" alt="">
-          <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Virunga Mountains</div>
-        </a>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#virunga-carousel" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#virunga-carousel" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-  </div>
-</div>
+                            <div id="virunga-flash" class="position-relative">
+                                <img class="img-fluid" src="img/akagera.jpg" alt="">
+                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Akagera</div>
+                            </div>
+                        </div>
+                    <style>
+    #virunga-flash {
+        transition: opacity 0.5s ease-in-out;
+    }
+</style>
+
+<script>
+    // Define the image URLs and corresponding captions
+    var images = [
+        {
+            src: "img/akagera.jpg",
+            caption: "Akagera"
+        },
+        {
+            src: "img/akagera1.jpg",
+            caption: "Akagera"
+        },
+        {
+            src: "img/akagera3.jpg",
+            caption: "Akagera"
+        },
+        {
+            src: "img/akagera4.jpg",
+            caption: "Akagera"
+        },
+        {
+            src: "img/akagera5.jpg",
+            caption: "Akagera"
+        }
+    ];
+
+    var flashElement = document.getElementById("virunga-flash");
+    var imageIndex = 1; // Start with the second image
+
+    function fadeOut() {
+        flashElement.style.opacity = 0;
+    }
+
+    function fadeIn() {
+        flashElement.innerHTML = `
+            <img class="img-fluid" src="${images[imageIndex].src}" alt="">
+            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${images[imageIndex].caption}</div>
+        `;
+
+        flashElement.style.opacity = 1;
+
+        imageIndex++;
+        if (imageIndex >= images.length) {
+            imageIndex = 0;
+        }
+    }
+
+    // Set the initial image
+    flashElement.innerHTML = `
+        <img class="img-fluid" src="${images[0].src}" alt="">
+        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${images[0].caption}</div>
+    `;
+
+    // Set the interval for fading images (in milliseconds)
+    setInterval(function() {
+        fadeOut();
+        setTimeout(fadeIn, 500); // Adjust the duration of the fade (in milliseconds) as needed
+    }, 3000); // Change the image every 3 seconds
+</script>
+
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                             <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/images/image1.jpeg" alt="">
-                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Akagera</div>
+                                <img class="img-fluid" src="img/virunga.png" alt="">
+                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Virunga Moutains</div>
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
@@ -290,39 +326,10 @@
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                            <div id="nyungwe-carousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#nyungwe-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#nyungwe-carousel" data-slide-to="1"></li>
-      <li data-target="#nyungwe-carousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <a class="position-relative d-block overflow-hidden" href="">
-          <img class="img-fluid" src="img/nyungwe.jpg" alt="" style="object-fit: cover;">
-          <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Nyungwe</div>
-        </a>
-      </div>
-      <div class="carousel-item">
-        <a class="position-relative d-block overflow-hidden" href="">
-          <img class="img-fluid" src="img/nyungwe1.jpg" alt="" style="object-fit: cover;">
-          <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Nyungwe</div>
-        </a>
-      </div>
-      <div class="carousel-item">
-        <a class="position-relative d-block overflow-hidden" href="">
-          <img class="img-fluid" src="img/nyungwe2.jpg" alt="" style="object-fit: cover;">
-          <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Nyungwe</div>
-        </a>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#nyungwe-carousel" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#nyungwe-carousel" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-  </div>
+                    <div id="nyungwe-flash" class="position-relative d-block h-100 overflow-hidden">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/nyungwe4.jpg" alt="" style="object-fit: cover;">
+                        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Nyungwe</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -434,7 +441,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Process</h6>
+                <h5 class="section-title bg-white text-center text-primary px-3">Process</h5>
                 <h1 class="mb-5">3 Easy Steps</h1>
             </div>
             <div class="row gy-5 gx-4 justify-content-center">
@@ -448,7 +455,7 @@
                         <h5 class="mt-4">Choose A Destination</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Choose the perfect safari destination with our expert recommendations. Based on your interests, budget and travel schedule, we offer personalized suggestions for the best destination to suit your needs. With a variety of destinations ranging from the savannahs of Akagera to the rainforests of Nyungwe, and the mountainous landscapes of Musanze, Rwanda has something for every type of traveler. Let our team help you find your dream safari adventure.</p>
+                        <p class="mb-0">Choose the perfect safari destination with our expert recommendations. Based on your interests, budget and travel schedule, we offer personalized suggestions for the best destination to suit your needs. With a variety of destinations ranging from the savannahs of Akagera to the rainforests of Nyungwe, and the mountainous landscapes of Musanze, Rwanda has something for every type of traveler.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -459,7 +466,7 @@
                         <h5 class="mt-4">Pay Online</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Easily complete your safari tour booking by making a secure online payment. Our payment gateway ensures a hassle-free transaction that is both safe and reliable. With instant confirmation and the ability to manage your booking from anywhere in the world, paying online is a convenient and stress-free option. Say goodbye to the hassle of carrying cash or exchanging currency and enjoy a seamless safari adventure experience with us.</p>
+                        <p class="mb-0">Easily complete your safari tour booking by making a secure online payment. Our payment gateway ensures a hassle-free transaction that is both safe and reliable. With instant confirmation and the ability to manage your booking from anywhere in the world. Say goodbye to the hassle of carrying cash or exchanging currency and enjoy a seamless safari adventure experience with us.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
@@ -467,17 +474,17 @@
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
                             <i class="fa fa-plane fa-3x text-white"></i>
                         </div>
-                        <h5 class="mt-4">Fly Today</h5>
+                        <h5 class="mt-4">Start Your Adventure</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Embark on your safari adventure today with our convenient fly-in option. Our expert team can arrange for seamless flights to your desired destination, so you can start your adventure right away. With a variety of flight options available, we can help you find the most convenient and cost-effective option to suit your needs. Say goodbye to the hassle of long drives and hello to the convenience of a fly-in safari adventure. Let us help you make your dream safari a reality today.</p>
+                        <p class="mb-0">Embark on your safari adventure today with our convenient fly-in option. Our expert team can arrange for seamless flights to your desired destination, so you can start your adventure right away. With a variety of flight options available, we can help you find the most convenient and cost-effective option to suit your needs. Let us help you make your dream safari a reality today.</p>
                     </div>
                 </div>
-                <a href="booking.html" class="btn btn-primary wow fadeInUp rounded-pill py-2 px-3">Book Now!</a>
             </div>
         </div>
     </div>
     <!-- Process Start -->
+
 
 <!-- Booking Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -629,18 +636,18 @@
 <div class="col-12">
 <div class="button-container">
     <a href="https://wa.me/+250787502200" target="_blank">
-        <img src="img/whatsapp.png" alt="WhatsApp Logo">
+        <img src="img/icons/whatsapp.png" alt="WhatsApp Logo">
         <p>Book with WhatsApp</p>
     </a>
 
    <a href="https://ig.me/m/akagera_big5_safaris" target="_blank">
-  <img src="img/instagram.png" alt="Instagram Logo">
+  <img src="img/icons/instagram.png" alt="Instagram Logo">
   <p>Book with Instagram</p>
 </a>
 
 
     <a href="https://www.facebook.com/" target="_blank">
-        <img src="img/facebook.png" alt="Facebook Logo">
+        <img src="img/icons/facebook.png" alt="Facebook Logo">
         <p>Book with Facebook</p>
     </a>
 </div>
