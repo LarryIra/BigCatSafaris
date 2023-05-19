@@ -319,7 +319,7 @@
     setInterval(function() {
         fadeOut();
         setTimeout(fadeIn, 500); // Adjust the duration of the fade (in milliseconds) as needed
-    }, 5000); // Change the image every 5 seconds
+    }, 6000); // Change the image every 5 seconds
 </script>
 
                         <div class="col-lg-6 col-md-12 wow slideIn" data-wow-delay="0.3s">
@@ -390,15 +390,74 @@
     setInterval(function() {
         virungaSlideshowElement.style.transform = "translateX(-100%)";
         setTimeout(slideIn, 350); // Adjust the duration of the slide (in milliseconds) as needed
-    }, 7000); // Change the image every 6 seconds
+    }, 8000); // Change the image every 6 seconds
 </script>
 
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/destination-3.png" alt="">
-                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Musanze</div>
-                            </a>
-                        </div>
+    <div id="musanze-flash" class="position-relative d-block overflow-hidden">
+        <img class="img-fluid" src="img/musanze.png" alt="">
+        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Musanze</div>
+    </div>
+</div>
+
+<style>
+    #musanze-flash {
+        transition: filter 0.7s ease-in-out;
+    }
+</style>
+
+<script>
+    // Define the image URLs and corresponding captions for the "musanze-flash" section
+    var musanzeImages = [
+        {
+            src: "img/musanze.png",
+            caption: "Musanze"
+        },
+        {
+            src: "img/musanze1.jpg",
+            caption: "Musanze"
+        },
+        {
+            src: "img/musanze2.jpg",
+            caption: "Musanze"
+        }
+    ];
+
+    var musanzeElement = document.getElementById("musanze-flash");
+    var musanzeImageIndex = 1;
+
+    function applyBlur() {
+        musanzeElement.style.filter = "blur(5px)";
+    }
+
+    function removeBlur() {
+        musanzeElement.innerHTML = `
+            <img class="img-fluid" src="${musanzeImages[musanzeImageIndex].src}" alt="">
+            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${musanzeImages[musanzeImageIndex].caption}</div>
+        `;
+
+        musanzeElement.style.filter = "blur(0)";
+
+        musanzeImageIndex++;
+        if (musanzeImageIndex >= musanzeImages.length) {
+            musanzeImageIndex = 0;
+        }
+    }
+
+    // Set the initial image for the "musanze-flash" section
+    musanzeElement.innerHTML = `
+        <img class="img-fluid" src="${musanzeImages[0].src}" alt="">
+        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${musanzeImages[0].caption}</div>
+    `;
+
+    // Set the interval for changing images in the "musanze-flash" section (in milliseconds)
+    setInterval(function() {
+        applyBlur();
+        setTimeout(removeBlur, 400); // Adjust the duration of the blur effect (in milliseconds) as needed
+    }, 7500); // Change the image every 3 seconds
+</script>
+
+
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
@@ -475,7 +534,7 @@
     // Set the interval for changing images in the "nyungwe-flash" section (in milliseconds)
     setInterval(function() {
         changeNyungweImage();
-    }, 7500); // Change the image every 3 seconds
+    }, 8500); // Change the image every 3 seconds
 </script>
 
 
