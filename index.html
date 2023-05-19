@@ -280,6 +280,14 @@
     var flashElement = document.getElementById("virunga-flash");
     var imageIndex = 1; // Start with the second image
 
+    // Preload the images
+    function preloadImages() {
+        for (var i = 0; i < images.length; i++) {
+            var img = new Image();
+            img.src = images[i].src;
+        }
+    }
+
     function fadeOut() {
         flashElement.style.opacity = 0;
     }
@@ -304,6 +312,9 @@
         <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${images[0].caption}</div>
     `;
 
+    // Preload the images
+    preloadImages();
+
     // Set the interval for fading images (in milliseconds)
     setInterval(function() {
         fadeOut();
@@ -311,12 +322,77 @@
     }, 3000); // Change the image every 3 seconds
 </script>
 
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/virunga.png" alt="">
-                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Virunga Moutains</div>
-                            </a>
-                        </div>
+                        <div class="col-lg-6 col-md-12 wow slideIn" data-wow-delay="0.3s">
+    <div id="virunga-slideshow" class="position-relative">
+        <img class="img-fluid" src="img/virunga.png" alt="">
+        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Virunga Mountains</div>
+    </div>
+</div>
+
+<style>
+    #virunga-slideshow {
+        transition: transform 0.5s ease-in-out;
+    }
+</style>
+
+<script>
+    // Define the image URLs and corresponding captions for the Virunga Mountains slideshow
+    var virungaImages = [
+        {
+            src: "img/virunga.png",
+            caption: "Virunga Mountains"
+        },
+        {
+            src: "img/virunga1.jpg",
+            caption: "Virunga Mountains"
+        },
+        {
+            src: "img/virunga2.jpg",
+            caption: "Virunga Mountains"
+        }
+    ];
+
+    var virungaSlideshowElement = document.getElementById("virunga-slideshow");
+    var virungaImageIndex = 1;
+
+    // Preload the images
+    function preloadVirungaImages() {
+        for (var i = 0; i < virungaImages.length; i++) {
+            var img = new Image();
+            img.src = virungaImages[i].src;
+        }
+    }
+
+    function slideIn() {
+        virungaSlideshowElement.innerHTML = `
+            <img class="img-fluid" src="${virungaImages[virungaImageIndex].src}" alt="">
+            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${virungaImages[virungaImageIndex].caption}</div>
+        `;
+
+        virungaSlideshowElement.style.transform = "translateX(0)";
+
+        virungaImageIndex++;
+        if (virungaImageIndex >= virungaImages.length) {
+            virungaImageIndex = 0;
+        }
+    }
+
+    // Set the initial image for the Virunga Mountains slideshow
+    virungaSlideshowElement.innerHTML = `
+        <img class="img-fluid" src="${virungaImages[0].src}" alt="">
+        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${virungaImages[0].caption}</div>
+    `;
+
+    // Preload the images
+    preloadVirungaImages();
+
+    // Set the interval for changing images in the Virunga Mountains slideshow (in milliseconds)
+    setInterval(function() {
+        virungaSlideshowElement.style.transform = "translateX(-100%)";
+        setTimeout(slideIn, 350); // Adjust the duration of the slide (in milliseconds) as needed
+    }, 5000); // Change the image every 3 seconds
+</script>
+
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
                             <a class="position-relative d-block overflow-hidden" href="">
                                 <img class="img-fluid" src="img/destination-3.png" alt="">
@@ -326,12 +402,86 @@
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <div id="nyungwe-flash" class="position-relative d-block h-100 overflow-hidden">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/nyungwe4.jpg" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Nyungwe</div>
-                    </div>
-                </div>
-            </div>
+    <div id="nyungwe-flash" class="position-relative d-block h-100 overflow-hidden">
+    <img class="img-fluid position-absolute w-100 h-100" src="img/nyungwe4.jpg" alt="" style="object-fit: cover;">
+    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Nyungwe</div>
+</div>
+
+<style>
+    #nyungwe-flash {
+        transition: transform 0.5s ease-in-out;
+    }
+</style>
+
+<script>
+    // Define the image URLs and corresponding captions for the "nyungwe-flash" section
+    var nyungweImages = [
+        {
+            src: "img/nyungwe4.jpg",
+            caption: "Nyungwe"
+        },
+        {
+            src: "img/nyungwe1.jpg",
+            caption: "Nyungwe"
+        },
+        {
+            src: "img/nyungwe2.jpg",
+            caption: "Nyungwe"
+        },
+        {
+            src: "img/nyungwe3.jpg",
+            caption: "Nyungwe"
+        }
+    ];
+
+    var nyungweElement = document.getElementById("nyungwe-flash");
+    var nyungweImageIndex = 1;
+
+    // Preload the images
+    function preloadImages() {
+        for (var i = 0; i < nyungweImages.length; i++) {
+            var img = new Image();
+            img.src = nyungweImages[i].src;
+        }
+    }
+
+    function changeNyungweImage() {
+        nyungweElement.style.transform = "scale(0)";
+
+        setTimeout(function() {
+            nyungweElement.innerHTML = `
+                <img class="img-fluid position-absolute w-100 h-100" src="${nyungweImages[nyungweImageIndex].src}" alt="" style="object-fit: cover;">
+                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${nyungweImages[nyungweImageIndex].caption}</div>
+            `;
+
+            nyungweElement.style.transform = "scale(1)";
+
+            nyungweImageIndex++;
+            if (nyungweImageIndex >= nyungweImages.length) {
+                nyungweImageIndex = 0;
+            }
+        }, 500); // Adjust the delay for the transition effect (in milliseconds)
+    }
+
+    // Set the initial image for the "nyungwe-flash" section
+    nyungweElement.innerHTML = `
+        <img class="img-fluid position-absolute w-100 h-100" src="${nyungweImages[0].src}" alt="" style="object-fit: cover;">
+        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${nyungweImages[0].caption}</div>
+    `;
+
+    // Preload the images
+    preloadImages();
+
+    // Set the interval for changing images in the "nyungwe-flash" section (in milliseconds)
+    setInterval(function() {
+        changeNyungweImage();
+    }, 4500); // Change the image every 3 seconds
+</script>
+
+
+</div>
+
+</div>
         </div>
     </div>
     <!-- Destination Start -->
