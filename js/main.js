@@ -92,3 +92,28 @@
     
 })(jQuery);
 
+  // var heroBackgroundElement = document.getElementById("hero-background");
+  //   var imageIndex = 0;
+  //   var totalImages = 10;
+
+  //   function fadeIn() {
+  //       heroBackgroundElement.style.backgroundImage = `linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(img/images/image${imageIndex}.jpeg)`;
+  //       heroBackgroundElement.style.opacity = 1;
+
+  //       setTimeout(fadeOut, 1000); // Adjust the duration of the fade-out (in milliseconds) as needed
+
+  //       imageIndex++;
+  //       if (imageIndex >= totalImages) {
+  //           imageIndex = 0;
+  //       }
+  //   }
+
+  //   function fadeOut() {
+  //       heroBackgroundElement.style.opacity = 0;
+  //   }
+
+  //   // Set the initial background image for the "hero-header" section
+  //   heroBackgroundElement.style.backgroundImage = `linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(img/images/image0.jpeg)`;
+
+  //   // Set the interval for changing background images in the "hero-header" section (in milliseconds)
+  //   setInterval(fadeIn, 5000); // Change the image every 5 seconds
