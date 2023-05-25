@@ -311,13 +311,23 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select bg-transparent white-text" id="destination" name="destination" required>
+                                        <select class="form-select bg-transparent white-text" id="select1" name="destination" required>
                                             <option value="">Select Destination</option>
-                                            <option value="1">Akagera</option>
-                                            <option value="2">Nyungwe</option>
-                                            <option value="3">Musanze</option>
+                                            <option value="1">Akagera National Park </option>
+                                            <option value="2">Volcanoes National Park</option>
+                                            <option value="3">Nyungwe Forest National Park</option>
+                                            <option value="4">Mukura - Gishwati National Park</option>
+                                            <option value="5">Kigali City Tour</option>
+                                            <option value="6">National Museum of Rwanda (Ethnographic Museum in Butare)</option>
+                                            <option value="7">Iby'iwacu Cultural Village</option>
+                                            <option value="8">King's Palace Museum (Nyanza)</option>
+                                            <option value="9">Rubavu Beach</option>
+                                            <option value="10">Kibuye (Museum of Environment and Islands)</option>
+                                            <option value="11">Musanze Caves</option>
+                                            <option value="12">Karisimbi Volcano (Musanze)</option>
+                                            <option value="13">Kamembe Hot Springs</option>
                                         </select>
-                                        <label for="destination">Destination</label>
+                                        <label for="select1">Destination</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -355,6 +365,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Get the destination query parameter value from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const destination = urlParams.get('destination');
+
+// Select the destination in the <select> element based on the query parameter
+if (destination) {
+  const selectElement = document.getElementById('select1');
+  selectElement.value = destination;
+}
+    </script>
     <!-- Booking Start -->
     
     
