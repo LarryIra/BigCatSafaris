@@ -465,6 +465,69 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Akagera Section */
+  #akagera-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  .section-description {
+    font-size: 18px;
+    color: #777;
+    line-height: 1.6;
+  }
+
+  .itinerary-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .activities-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+
+  .book-now-button {
+  margin-top: 40px;
+}
+
+.book-now-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00b894;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-button a:hover {
+  background-color: #00a885;
+}
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .col-lg-6 {
+      margin-top: 40px;
+    }
+  }
+
+
 
 /*** Section Title ***/
 .section-title {
