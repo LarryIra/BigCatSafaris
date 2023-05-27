@@ -92,28 +92,77 @@
     
 })(jQuery);
 
-  // var heroBackgroundElement = document.getElementById("hero-background");
-  //   var imageIndex = 0;
-  //   var totalImages = 10;
+// Start Date and Time
 
-  //   function fadeIn() {
-  //       heroBackgroundElement.style.backgroundImage = `linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(img/images/image${imageIndex}.jpeg)`;
-  //       heroBackgroundElement.style.opacity = 1;
+  var now = new Date().toISOString().substr(0, 16);
+    document.querySelector("#start-datetime").min = now;
 
-  //       setTimeout(fadeOut, 1000); // Adjust the duration of the fade-out (in milliseconds) as needed
+     // Get the start date and time input element
+  const startDatetime = document.getElementById("start-datetime");
+  
+  // Add an event listener to update the minimum value of the end date and time input element when the start date and time changes
+  startDatetime.addEventListener("change", function() {
+    const endDatetime = document.getElementById("end-datetime");
+    endDatetime.min = startDatetime.value;
+  });
 
-  //       imageIndex++;
-  //       if (imageIndex >= totalImages) {
-  //           imageIndex = 0;
-  //       }
-  //   }
+// Start Date and Time End  
 
-  //   function fadeOut() {
-  //       heroBackgroundElement.style.opacity = 0;
-  //   }
 
-  //   // Set the initial background image for the "hero-header" section
-  //   heroBackgroundElement.style.backgroundImage = `linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(img/images/image0.jpeg)`;
+// Destinations (Other)   
 
-  //   // Set the interval for changing background images in the "hero-header" section (in milliseconds)
-  //   setInterval(fadeIn, 5000); // Change the image every 5 seconds
+   function handleSelectChange() {
+        var selectElement = document.getElementById('select1');
+        var selectedValue = selectElement.value;
+
+        if (selectedValue === 'other') {
+            // Display the message for "Other" option
+            document.getElementById('other-message').style.display = 'block';
+        } else {
+            // Hide the message if any other option is selected
+            document.getElementById('other-message').style.display = 'none';
+        }
+    }
+
+    // Add event listener to the select element
+    document.getElementById('select1').addEventListener('change', handleSelectChange);
+
+  // Destinations End 
+
+
+  // Array of country names (Nationality) START
+    const countries = [
+    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia",
+    "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
+    "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+    "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia",
+    "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica",
+    "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia",
+    "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece",
+    "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India",
+    "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya",
+    "Kiribati", "Korea, North", "Korea, South", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho",
+    "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali",
+    "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia",
+    "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand",
+    "Nicaragua", "Niger", "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama",
+    "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
+    "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe",
+    "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
+    "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
+"Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
+"Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
+"Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+];
+
+    // Get the nationality select element
+    const nationalitySelect = document.getElementById("nationality");
+
+    // Populate the select element with country options
+    countries.forEach(country => {
+        const option = document.createElement("option");
+        option.text = country;
+        nationalitySelect.add(option);
+    }); 
+
+    // Array of country names (Nationality) END
