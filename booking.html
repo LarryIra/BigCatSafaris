@@ -218,9 +218,9 @@
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent white-text" id="nationality" name="nationality" required>
-                                            <option value="">Select Your Nationality</option>
+                                            <option value="">Country of Origin</option>
                                         </select>
-                                        <label for="nationality">Nationality</label>
+                                        <label for="nationality">Country of Origin</label>
                                     </div>
                                 </div>
 
@@ -234,15 +234,15 @@
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="datetime-local" class="form-control bg-transparent white-text" id="start-datetime" name="start-datetime" min="{{ date('Y-m-d\TH:i') }}" required>
-                                        <label for="start-datetime">Start Date & Time</label>
+                                        <input type="date" class="form-control bg-transparent white-text" id="start-date" name="start-date" min="{{ date('Y-m-d') }}" required>
+                                        <label for="start-date">Start Date</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="datetime-local" class="form-control bg-transparent white-text" id="end-datetime" name="end-datetime" min="{{ date('Y-m-d\TH:i', strtotime('+1 hour')) }}" max="{{ date('Y-m-d\TH:i', strtotime('+1 week')) }}" required>
-                                        <label for="end-datetime">End Date & Time</label>
+                                        <input type="date" class="form-control bg-transparent white-text" id="end-date" name="end-date" min="{{ date('Y-m-d', strtotime('+1 day')) }}" max="{{ date('Y-m-d', strtotime('+1 week')) }}" required>
+                                        <label for="end-date">End Date</label>
                                     </div>
                                 </div>
 
@@ -250,7 +250,7 @@
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent white-text" id="budget" name="budget" required>
-                                            <option value="">Select Budget</option>
+                                            <option value="">Acccomodation Budget</option>
                                             <option value="low">Low Budget ($100-$300)</option>
                                             <option value="mid">Mid-Range ($350-$500)</option>
                                             <option value="luxury">Luxury ($1000+)</option>
@@ -258,6 +258,7 @@
                                         <label for="budget">Budget Range</label>
                                     </div>
                                 </div>
+                                
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent white-text" id="select1" name="destination" required>
@@ -294,7 +295,7 @@
                                     <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
                                 </div>
                             </div>
-                            
+
 <div class="col-12">
 <div class="button-container">
     <a href="https://wa.me/+250787502200" target="_blank">

@@ -94,17 +94,16 @@
 
 // Start Date and Time
 
-  var now = new Date().toISOString().substr(0, 16);
-    document.querySelector("#start-datetime").min = now;
+  // Get the start date input element
+    const startDate = document.getElementById("start-date");
+    const now = new Date().toISOString().split("T")[0];
+    startDate.min = now;
 
-     // Get the start date and time input element
-  const startDatetime = document.getElementById("start-datetime");
-  
-  // Add an event listener to update the minimum value of the end date and time input element when the start date and time changes
-  startDatetime.addEventListener("change", function() {
-    const endDatetime = document.getElementById("end-datetime");
-    endDatetime.min = startDatetime.value;
-  });
+    // Add an event listener to update the minimum value of the end date input element when the start date changes
+    startDate.addEventListener("change", function() {
+        const endDate = document.getElementById("end-date");
+        endDate.min = startDate.value;
+    });
 
 // Start Date and Time End  
 
