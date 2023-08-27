@@ -165,3 +165,37 @@
     }); 
 
     // Array of country names (Nationality) END
+
+    //Newsletter START
+
+    const emailInput = document.getElementById('emailInput');
+    const subscribeButton = document.getElementById('subscribeButton');
+    const errorMessage = document.getElementById('errorMessage');
+    const successMessage = document.getElementById('successMessage');
+
+    subscribeButton.addEventListener('click', () => {
+        if (emailInput.value.trim() === '') {
+            errorMessage.textContent = 'Please enter an email address.';
+            errorMessage.classList.remove('d-none');
+            successMessage.classList.add('d-none');
+        } else if (!isValidEmail(emailInput.value)) {
+            errorMessage.textContent = 'Please enter a valid email address.';
+            errorMessage.classList.remove('d-none');
+            successMessage.classList.add('d-none');
+        } else {
+            // Simulate sending the email and show success message after a delay
+            errorMessage.classList.add('d-none');
+            successMessage.classList.remove('d-none');
+            emailInput.value = '';
+            setTimeout(() => {
+                successMessage.classList.add('d-none');
+            }, 6000); // Show success message for 3 seconds
+        }
+    });
+
+    function isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    //Newsletter END
