@@ -146,114 +146,110 @@
     <div class="row">
       <div class="col-lg-6">
         <h2 class="akgsection-title">Akagera National Park</h2>
-        <p class="section-description">Akagera National Park is located in eastern Rwanda and is known for its diverse wildlife and stunning landscapes. The park is home to a wide range of animals, including elephants, giraffes, zebras, hippos, crocodiles, and numerous bird species. It offers a unique safari experience with its open savannahs, lakes, and swamps.</p>
+        <p class="section-description">Akagera National Park, located in eastern Rwanda, is renowned for its diverse wildlife and breathtaking landscapes. The park is home to a wide range of animals, including the Big Five, antelopes, hippos, crocodiles, and over 480 bird species. It offers a unique safari experience with its open savannahs, lakes, and swamps.</p>
       </div>
       <div class="col-lg-6">
         <div id="virunga-flash" class="position-relative">
-        <img src="img/akagera.jpg" alt="Akagera National Park" class="img-fluid">
+          <img src="img/akagera.jpg" alt="Akagera National Park" class="img-fluid">
+        </div>
       </div>
-  </div>
     </div>
     <style>
-    #virunga-flash {
+      #virunga-flash {
         transition: opacity 0.5s ease-in-out;
-    }
-</style>
-
-<script>
-    // Define the image URLs
-    var images = [
-        "img/akagera.jpg",
-        "img/akagera1.jpg",
-        "img/akagera3.jpg",
-        "img/akagera4.jpg",
-        "img/akagera5.jpg"
-    ];
-
-    var flashElement = document.getElementById("virunga-flash");
-    var imageIndex = 1; // Start with the second image
-
-    // Preload the images
-    function preloadImages() {
-        for (var i = 0; i < images.length; i++) {
-            var img = new Image();
-            img.src = images[i];
-        }
-    }
-
-    function fadeOut() {
-        flashElement.style.opacity = 0;
-    }
-
-    function fadeIn() {
-        flashElement.innerHTML = `
-            <img class="img-fluid" src="${images[imageIndex]}" alt="">
-        `;
-
-        flashElement.style.opacity = 1;
-
-        imageIndex++;
-        if (imageIndex >= images.length) {
-            imageIndex = 0;
-        }
-    }
-
-    // Set the initial image
-    flashElement.innerHTML = `
-        <img class="img-fluid" src="${images[0]}" alt="">
-    `;
-
-    // Preload the images
-    preloadImages();
-
-    // Set the interval for fading images (in milliseconds)
-    setInterval(function() {
-        fadeOut();
-        setTimeout(fadeIn, 500); // Adjust the duration of the fade (in milliseconds) as needed
-    }, 6000); // Change the image every 5 seconds
-</script>
+      }
+    </style>
 
     <div class="row mt-5">
       <div class="col-lg-12">
-        <h3 class="itinerary-title">Itineraries</h3>
+        <h3 class="pricing-title">Safari Packages</h3>
       </div>
       <div class="col-lg-6">
-        <h4>2-Day Itinerary</h4>
-        <p>Day 1: Morning game drive, boat trip on Lake Ihema, afternoon game drive.</p>
-        <p>Day 2: Morning game drive, visit to the park's headquarters and cultural village.</p>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title">One-Day Wildlife Safari</h4>
+            <p class="card-text">Experience a thrilling one-day wildlife safari in Akagera National Park. Enjoy game viewing in the savanna, where you'll encounter the Big Five, antelopes, hippos, crocodiles, and a myriad of bird species. Take in the breathtaking views of the rolling hills and wetlands.</p>
+            <p class="card-text">Your adventure begins with an early morning meet-up with a professional safari guide in Kigali. The 2.5-hour drive to the park sets the stage for your wildlife encounters. After park registration, witness herds of animals, including buffalo, elephants, rhinos, lions, leopards, hippos, crocodiles, antelopes, giraffes, zebras, and an array of beautiful birds. Optionally, enjoy a boat safari in the park before returning to Kigali.</p>
+          </div>
+        </div>
       </div>
       <div class="col-lg-6">
-        <h4>3-Day Itinerary</h4>
-        <p>Day 1: Morning game drive, boat trip on Lake Ihema, afternoon game drive.</p>
-        <p>Day 2: Morning game drive, visit to the park's headquarters and cultural village.</p>
-        <p>Day 3: Full-day game drive, picnic lunch in the park, evening wildlife spotting.</p>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title">Quotation</h4>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Budget</th>
+                  <th>Middle Range</th>
+                  <th>Luxury</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Solo Traveler</td>
+                  <td>$300</td>
+                  <td>$400</td>
+                  <td>$500</td>
+                </tr>
+                <tr>
+                  <td>2 Guests in One Car (Per Person)</td>
+                  <td>$225</td>
+                  <td>$275</td>
+                  <td>$325</td>
+                </tr>
+                <tr>
+                  <td>3 Guests in One Car (Per Person)</td>
+                  <td>$200</td>
+                  <td>$233</td>
+                  <td>$267</td>
+                </tr>
+                <tr>
+                  <td>4 Guests in One Car (Per Person)</td>
+                  <td>$187</td>
+                  <td>$212</td>
+                  <td>$237</td>
+                </tr>
+                <tr>
+                  <td>5 Guests (Per Person)</td>
+                  <td>-</td>
+                  <td>$199</td>
+                  <td>$219</td>
+                </tr>
+                <tr>
+                  <td>6 Guests (Per Person)</td>
+                  <td>-</td>
+                  <td>$190</td>
+                  <td>$207</td>
+                </tr>
+                <tr>
+                  <td>7 Guests (Per Person)</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>$198</td>
+                </tr>
+                <tr>
+                  <td>8 Guests (Per Person)</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>$192</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="row mt-5">
-      <div class="col-lg-12">
-        <h3 class="activities-title">Activities</h3>
-      </div>
-      <div class="col-lg-4">
-        <h5>Game Drives</h5>
-        <p>Embark on thrilling game drives in the park to spot wildlife such as elephants, lions, giraffes, zebras, and more.</p>
-      </div>
-      <div class="col-lg-4">
-        <h5>Boat Trips</h5>
-        <p>Take a scenic boat trip on Lake Ihema and observe hippos, crocodiles, and various bird species.</p>
-      </div>
-      <div class="col-lg-4">
-        <h5>Cultural Village Visit</h5>
-        <p>Explore the local culture and traditions by visiting the cultural village near the park.</p>
-      </div>
-    </div>
+    
+    <p class="pricing-description">These prices include transportation, park entry fees, accommodation, food, guiding services, and mineral water. Lunch is also provided.</p>
+    <p class="pricing-description">We recommend our guests to stay four nights, five days in Akagera National Park. You will have time to enjoy the park scenery, watch animals and birds, and take advantage of our special discounts for guests who stay longer in the park.</p>
 
     <div class="book-now-button">
       <a href="booking.html?destination=1#booking-section" class="btn btn-primary">Book Now</a>
     </div>
   </div>
 </section>
-
 
     <!-- Destination End -->
 

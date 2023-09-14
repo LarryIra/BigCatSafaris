@@ -25,6 +25,62 @@
         }
     });
     
+
+    //Akagera Destination START
+
+    // Define the image URLs
+    var images = [
+        "img/akagera.jpg",
+        "img/akagera1.jpg",
+        "img/akagera3.jpg",
+        "img/akagera4.jpg",
+        "img/akagera5.jpg"
+    ];
+
+    var flashElement = document.getElementById("virunga-flash");
+    var imageIndex = 1; // Start with the second image
+
+    // Preload the images
+    function preloadImages() {
+        for (var i = 0; i < images.length; i++) {
+            var img = new Image();
+            img.src = images[i];
+        }
+    }
+
+    function fadeOut() {
+        flashElement.style.opacity = 0;
+    }
+
+    function fadeIn() {
+        flashElement.innerHTML = `
+            <img class="img-fluid" src="${images[imageIndex]}" alt="">
+        `;
+
+        flashElement.style.opacity = 1;
+
+        imageIndex++;
+        if (imageIndex >= images.length) {
+            imageIndex = 0;
+        }
+    }
+
+    // Set the initial image
+    flashElement.innerHTML = `
+        <img class="img-fluid" src="${images[0]}" alt="">
+    `;
+
+    // Preload the images
+    preloadImages();
+
+    // Set the interval for fading images (in milliseconds)
+    setInterval(function() {
+        fadeOut();
+        setTimeout(fadeIn, 500); // Adjust the duration of the fade (in milliseconds) as needed
+    }, 6000); // Change the image every 5 seconds
+
+    //Akagera Destination END
+
     
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
