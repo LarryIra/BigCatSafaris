@@ -301,6 +301,21 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.hero-header-nyungwe {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/nyungwe2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-header-volcanoes {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/musanze1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /*.hero-header-index {
     background-position: center center;
     background-repeat: no-repeat;
