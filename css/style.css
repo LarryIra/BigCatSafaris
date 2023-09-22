@@ -316,6 +316,20 @@
     background-size: cover;
 }
 
+.hero-header-kgl {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/kgl1.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-header-mkra {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/gishwati1.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /*.hero-header-index {
     background-position: center center;
     background-repeat: no-repeat;
@@ -347,14 +361,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.hero-header-kgl {
-    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/kgl1.jpeg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 
 .hero-header-lion {
     background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/BIGFIVE/lion1.jpg);
