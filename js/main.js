@@ -255,3 +255,79 @@
     }
 
     //Newsletter END
+
+
+    //POPULAR DESTINATION SLIDESHOW
+
+    //AKAGERA START
+
+     // Define the image URLs and corresponding captions
+    var images = [
+        {
+            src: "img/akagera.jpg",
+            caption: "Akagera"
+        },
+        {
+            src: "img/akagera1.jpg",
+            caption: "Akagera"
+        },
+        {
+            src: "img/akagera3.jpg",
+            caption: "Akagera"
+        },
+        {
+            src: "img/akagera4.jpg",
+            caption: "Akagera"
+        },
+        {
+            src: "img/akagera5.jpg",
+            caption: "Akagera"
+        }
+    ];
+
+    var flashElement = document.getElementById("virunga-flash");
+    var imageIndex = 1; // Start with the second image
+
+    // Preload the images
+    function preloadImages() {
+        for (var i = 0; i < images.length; i++) {
+            var img = new Image();
+            img.src = images[i].src;
+        }
+    }
+
+    function fadeOut() {
+        flashElement.style.opacity = 0;
+    }
+
+    function fadeIn() {
+        flashElement.innerHTML = `
+            <img class="img-fluid" src="${images[imageIndex].src}" alt="">
+            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${images[imageIndex].caption}</div>
+        `;
+
+        flashElement.style.opacity = 1;
+
+        imageIndex++;
+        if (imageIndex >= images.length) {
+            imageIndex = 0;
+        }
+    }
+
+    //AKAGERA END
+
+    // Set the initial image
+    flashElement.innerHTML = `
+        <img class="img-fluid" src="${images[0].src}" alt="">
+        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">${images[0].caption}</div>
+    `;
+
+    // Preload the images
+    preloadImages();
+
+    // Set the interval for fading images (in milliseconds)
+    setInterval(function() {
+        fadeOut();
+        setTimeout(fadeIn, 500); // Adjust the duration of the fade (in milliseconds) as needed
+    }, 6000); // Change the image every 5 seconds
+
