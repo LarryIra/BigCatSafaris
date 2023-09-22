@@ -225,7 +225,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control bg-transparent white-text" id="num-people" name="num-people" placeholder="Number of People" required>
+                                        <input type="number" class="form-control bg-transparent white-text" id="num-people" name="num-people" placeholder="Number of People" required min="1">
                                         <label for="num-people">Number of People</label>
                                     </div>
                                 </div>
@@ -250,9 +250,9 @@
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent white-text" id="budget" name="budget" required>
                                             <option value="">Acccomodation Budget</option>
-                                            <option value="low">Low Budget ($100-$300)</option>
-                                            <option value="mid">Mid-Range ($350-$500)</option>
-                                            <option value="luxury">Luxury ($1000+)</option>
+                                            <option value="low">Low Budget</option>
+                                            <option value="mid">Mid-Range</option>
+                                            <option value="luxury">Luxury</option>
                                         </select>
                                         <label for="budget">Budget Range</label>
                                     </div>
