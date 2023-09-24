@@ -337,6 +337,13 @@
     background-size: cover;
 }
 
+.hero-header-ibyacu {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/ibyacu1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /*.hero-header-index {
     background-position: center center;
     background-repeat: no-repeat;
