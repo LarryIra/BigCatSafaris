@@ -351,6 +351,20 @@
     background-size: cover;
 }
 
+.hero-header-rbv {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/rubavu.PNG);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-header-kbymsm {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/kbymsm.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /*.hero-header-index {
     background-position: center center;
     background-repeat: no-repeat;
