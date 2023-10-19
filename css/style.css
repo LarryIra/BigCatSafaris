@@ -372,6 +372,19 @@
     background-size: cover;
 }
 
+.hero-header-krb {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/krb.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-header-kmb {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/kmbht.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 /*.hero-header-index {
     background-position: center center;
     background-repeat: no-repeat;
