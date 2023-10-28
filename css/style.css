@@ -417,6 +417,13 @@
     background-size: cover;
 }
 
+.hero-header-akg {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/akagera5.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .hero-header-lion {
     background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/BIGFIVE/lion1.jpg);
     background-position: center center;
