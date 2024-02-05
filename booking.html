@@ -215,12 +215,11 @@
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select bg-transparent white-text" id="nationality" name="nationality" required>
-                                            <option value="">Country of Origin</option>
-                                        </select>
+                                        <input type="text" class="form-control bg-transparent white-text" id="nationality" name="nationality" placeholder="Country of Origin" required>
                                         <label for="nationality">Country of Origin</label>
                                     </div>
                                 </div>
+
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -231,18 +230,36 @@
 
 
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="date" class="form-control bg-transparent white-text" id="start-date" name="start-date" min="{{ date('Y-m-d') }}" required>
-                                        <label for="start-date">Start Date</label>
-                                    </div>
-                                </div>
+    <div class="form-floating">
+        <input type="date" class="form-control bg-transparent white-text" id="start-date" name="start-date" min="{{ date('Y-m-d') }}" required>
+        <label for="start-date">Start Date</label>
+    </div>
+</div>
 
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="date" class="form-control bg-transparent white-text" id="end-date" name="end-date" min="{{ date('Y-m-d', strtotime('+1 day')) }}" max="{{ date('Y-m-d', strtotime('+1 week')) }}" required>
-                                        <label for="end-date">End Date</label>
-                                    </div>
-                                </div>
+<div class="col-md-6">
+    <div class="form-floating">
+        <input type="date" class="form-control bg-transparent white-text" id="end-date" name="end-date" required>
+        <label for="end-date">End Date</label>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the current date in the format YYYY-MM-DD
+        const currentDate = new Date().toISOString().split('T')[0];
+
+        // Set the minimum date for the start date input
+        document.getElementById('start-date').min = currentDate;
+
+        // Add an event listener to the start date input
+        document.getElementById('start-date').addEventListener('change', function () {
+            // When the start date changes, set the minimum date for the end date
+            const selectedStartDate = this.value;
+            document.getElementById('end-date').min = selectedStartDate;
+        });
+    });
+</script>
+
 
 
                                 <div class="col-md-6">
