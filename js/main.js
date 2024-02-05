@@ -148,7 +148,10 @@
     
 })(jQuery);
 
-// Start Date and Time
+
+
+
+// Start Date and Time START
 
   // Get the start date input element
     const startDate = document.getElementById("start-date");
@@ -161,7 +164,11 @@
         endDate.min = startDate.value;
     });
 
-// Start Date and Time End  
+// Start Date and Time END
+
+
+
+
 
 
 // Destinations (Other)   
@@ -183,6 +190,8 @@
     document.getElementById('select1').addEventListener('change', handleSelectChange);
 
   // Destinations End 
+
+
 
 
   // Array of country names (Nationality) START
@@ -221,6 +230,9 @@
     }); 
 
     // Array of country names (Nationality) END
+
+
+
 
     //Newsletter START
 
