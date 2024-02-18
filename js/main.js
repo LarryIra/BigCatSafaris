@@ -154,14 +154,22 @@
 // Start Date and Time START
 
   // Get the start date input element
-    const startDate = document.getElementById("start-date");
-    const now = new Date().toISOString().split("T")[0];
-    startDate.min = now;
+     document.addEventListener('DOMContentLoaded', function () {
+        // Get today's date in the format YYYY-MM-DD
+        const today = new Date().toISOString().split('T')[0];
 
-    // Add an event listener to update the minimum value of the end date input element when the start date changes
-    startDate.addEventListener("change", function() {
-        const endDate = document.getElementById("end-date");
-        endDate.min = startDate.value;
+        // Set the minimum date for the start date input
+        document.getElementById('start-date').min = today;
+
+        // Add an event listener to the start date input
+        document.getElementById('start-date').addEventListener('change', function () {
+            // When the start date changes, set the minimum date for the end date
+            const selectedStartDate = this.value;
+            document.getElementById('end-date').min = selectedStartDate;
+        });
+
+        // Set the minimum date for the end date input
+        document.getElementById('end-date').min = today;
     });
 
 // Start Date and Time END

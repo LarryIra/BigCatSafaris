@@ -245,11 +245,11 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Get the current date in the format YYYY-MM-DD
-        const currentDate = new Date().toISOString().split('T')[0];
+        // Get today's date in the format YYYY-MM-DD
+        const today = new Date().toISOString().split('T')[0];
 
         // Set the minimum date for the start date input
-        document.getElementById('start-date').min = currentDate;
+        document.getElementById('start-date').min = today;
 
         // Add an event listener to the start date input
         document.getElementById('start-date').addEventListener('change', function () {
@@ -257,6 +257,9 @@
             const selectedStartDate = this.value;
             document.getElementById('end-date').min = selectedStartDate;
         });
+
+        // Set the minimum date for the end date input
+        document.getElementById('end-date').min = today;
     });
 </script>
 
@@ -298,6 +301,26 @@
 
                                 <div class="white-text" id="other-message" style="display: none;">For destinations not listed, kindly include them in the "Special Requests" section below.
                                 </div>
+
+                                <script>
+                                    function handleSelectChange() {
+        var selectElement = document.getElementById('select1');
+        var selectedValue = selectElement.value;
+
+        if (selectedValue === 'other') {
+            // Display the message for "Other" option
+            document.getElementById('other-message').style.display = 'block';
+        } else {
+            // Hide the message if any other option is selected
+            document.getElementById('other-message').style.display = 'none';
+        }
+    }
+
+    // Add event listener to the select element
+    document.getElementById('select1').addEventListener('change', handleSelectChange);
+
+  // Destinations End 
+                                </script>
 
                                 <div class="col-12">
                                     <div class="form-floating">
