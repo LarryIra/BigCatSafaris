@@ -445,6 +445,13 @@
     background-size: cover;
 }
 
+.hero-header-prmt {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/tours/prmt2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .hero-header-elephant {
     background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/BIGFIVE/elephant.jpg);
     background-position: center center;
