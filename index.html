@@ -266,18 +266,48 @@
                     <div class="row g-3">
                         
                         <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a href="akg.html">
-                                <div id="virunga-flash" class="position-relative">
-                                    <img class="img-fluid" src="img/akagera.jpg" alt="">
-                                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Akagera</div>
-                                </div>
-                            </a>
-                        </div>
-                        <style>
-                            #virunga-flash {
-                                transition: opacity 0.5s ease-in-out;
-                            }
-                        </style>
+    <a href="akg.html">
+        <div id="akagera-flash" class="position-relative">
+            <img id="akagera-img" class="img-fluid" src="img/akagera.jpg" alt="">
+            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Akagera</div>
+        </div>
+    </a>
+</div>
+
+<style>
+    #akagera-flash {
+        transition: opacity 0.5s ease-in-out;
+    }
+</style>
+
+<script>
+    // Akagera Slideshow Images
+    var akageraImages = [
+        "img/akagera.jpg",
+        "img/akagera1.jpg",
+        "img/akagera5.jpg"
+    ];
+
+    var akageraIndex = 0;
+    var akageraImgElement = document.getElementById("akagera-img");
+
+    function changeAkageraImage() {
+        akageraIndex++;
+        if (akageraIndex >= akageraImages.length) {
+            akageraIndex = 0;
+        }
+
+        akageraImgElement.style.opacity = "0"; // Fade out
+        setTimeout(() => {
+            akageraImgElement.src = akageraImages[akageraIndex]; // Change image
+            akageraImgElement.style.opacity = "1"; // Fade in
+        }, 500); // Wait 0.5s before changing image
+    }
+
+    // Auto change image every 5 seconds
+    setInterval(changeAkageraImage, 5000);
+</script>
+
 
 
                         <div class="col-lg-6 col-md-12 wow slideIn" data-wow-delay="0.3s">
