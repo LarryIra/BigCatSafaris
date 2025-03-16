@@ -508,6 +508,13 @@
     background-size: cover;
 }
 
+.hero-header-gldn {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/tours/gldn1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .tour-package-section .nav-link {
   background-color: #f8f9fa;
