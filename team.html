@@ -241,8 +241,9 @@
         <h1 class="mb-5">Our Clients Say!!!</h1>
       </div>
       <div class="row">
+        <!-- Reviewer Tabs -->
         <div class="col-md-4">
-          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <button class="nav-link active reviewer-tab" id="review1-tab" data-bs-toggle="pill" data-bs-target="#review1" type="button" role="tab" aria-controls="review1" aria-selected="true">
               <img src="img/Reviews/review-1.jpeg" class="reviewer-img me-2"> <span>Mark & Kristin</span>
             </button>
@@ -257,6 +258,8 @@
             </button>
           </div>
         </div>
+
+        <!-- Review Content -->
         <div class="col-md-8">
           <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="review1" role="tabpanel" aria-labelledby="review1-tab">
@@ -294,37 +297,47 @@ His expertise as a tracker led us to remarkable wildlife encounters : lions, él
   </div>
 </section>
 
+<!-- CSS -->
 <style>
 .reviewer-tab {
   display: flex;
   align-items: center;
-  background-color: #f8f9fa;
-  color: #333;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  padding: 8px 12px;
-  transition: background-color 0.3s, color 0.3s;
+  gap: 15px;
+  background-color: transparent;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
   text-align: left;
 }
 
+.reviewer-tab:hover {
+  background-color: #f0f8ff;
+  transform: scale(1.01);
+}
+
 .reviewer-tab img.reviewer-img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+.reviewer-tab.active {
+  background-color: #e0f7ea !important;
+}
+
+.reviewer-tab.active img.reviewer-img {
+  border-color: #28a745;
 }
 
 .reviewer-tab span {
   font-size: 1rem;
-  font-weight: 500;
-  color: #333;
-}
-
-.reviewer-tab.active {
-  background-color: #d4edda !important; /* Light green */
-  color: #155724;
   font-weight: 600;
+  color: #333;
 }
 
 .review-text {
@@ -342,6 +355,8 @@ His expertise as a tracker led us to remarkable wildlife encounters : lions, él
 
 .review-content {
   animation: fadeIn 0.5s ease-in-out;
+  background: #ffffff;
+  border: 1px solid #ddd;
 }
 
 @keyframes fadeIn {
@@ -349,6 +364,30 @@ His expertise as a tracker led us to remarkable wildlife encounters : lions, él
   to { opacity: 1; transform: translateY(0); }
 }
 </style>
+
+<!-- JS for Auto-Rotation -->
+<script>
+  let reviewTabs = document.querySelectorAll('.reviewer-tab');
+  let tabTriggers = Array.from(reviewTabs);
+  let currentIndex = 0;
+  let autoRotate = true;
+
+  function showNextReview() {
+    if (!autoRotate) return;
+    currentIndex = (currentIndex + 1) % tabTriggers.length;
+    new bootstrap.Tab(tabTriggers[currentIndex]).show();
+  }
+
+  let reviewInterval = setInterval(showNextReview, 5000);
+
+  // Stop auto-rotation when a tab is clicked
+  tabTriggers.forEach(tab => {
+    tab.addEventListener('click', () => {
+      autoRotate = false;
+      clearInterval(reviewInterval);
+    });
+  });
+</script>
     <!-- Reviews End -->
         
 
