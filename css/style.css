@@ -501,6 +501,45 @@
     background-size: cover;
 }
 
+
+.tour-package-section .nav-link {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 12px;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.tour-package-section .nav-link.active {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: 600;
+}
+
+.tour-package-section .tab-content .tab-pane {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tour-package-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-package-section ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 .scroll-down-button {
     position: absolute;
     left: 50%;
